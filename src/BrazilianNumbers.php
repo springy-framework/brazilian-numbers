@@ -96,4 +96,24 @@ class BrazilianNumbers
 
         return true;
     }
+
+    public function isNisValid(string $nis): bool
+    {
+        if (!preg_match('/\d{11}|\d{3}\.\d{5}\.\d{2}-\d/', $nis)) {
+            return false;
+        }
+
+        $nis = preg_replace('/[^\d]/', '', $nis);
+
+        if (preg_match("/^{$nis[0]}{11}$/", $nis)) {
+            return false;
+        }
+
+        $dig = 0;
+        for ($i = 0; $i < 10; $i++) {
+            $dig += (int) $nis[$i] * (($i < 2 ? 3 : 11) - $i);
+        }
+
+        return (int) $nis[10] == (((10 * $dig) % 11) % 10);
+    }
 }
