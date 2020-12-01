@@ -12,4 +12,5 @@ before_install:
 install:
   - travis_retry composer install -n
 
-script: vendor/bin/phpunit
+script:
+  - composer test
