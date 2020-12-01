@@ -6,7 +6,7 @@ class NisTest extends TestCase
 {
     public function testInvalidNis()
     {
-        $brNum = new BrazilianNumbers();
+        $brNum = new Springy\BrazilianNumbers();
 
         $this->assertFalse($brNum->isNisValid(''));
         $this->assertFalse($brNum->isNisValid('000'));
@@ -18,7 +18,7 @@ class NisTest extends TestCase
 
     public function testValidNis()
     {
-        $brNum = new BrazilianNumbers();
+        $brNum = new Springy\BrazilianNumbers();
 
         $this->assertTrue($brNum->isNisValid('64058791384'));
         $this->assertTrue($brNum->isNisValid('640.58791.38-4'));

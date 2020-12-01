@@ -1,5 +1,7 @@
 <?php
 
+namespace Springy;
+
 class BrazilianNumbers
 {
     public function isCnhValid(string $cnh): bool
