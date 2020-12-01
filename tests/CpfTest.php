@@ -6,7 +6,7 @@ class CpfTest extends TestCase
 {
     public function testInvalidCpf()
     {
-        $brNum = new BrazilianNumbers();
+        $brNum = new Springy\BrazilianNumbers();
 
         $this->assertFalse($brNum->isCpfValid(''));
         $this->assertFalse($brNum->isCpfValid('000'));
@@ -23,7 +23,7 @@ class CpfTest extends TestCase
 
     public function testValidCpf()
     {
-        $brNum = new BrazilianNumbers();
+        $brNum = new Springy\BrazilianNumbers();
 
         $this->assertTrue($brNum->isCpfValid('89967873612'));
         $this->assertTrue($brNum->isCpfValid('899.678.736-12'));

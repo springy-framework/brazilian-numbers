@@ -1,4 +1,4 @@
-# brazilian-numbers
+# Springy BrazilianNumbers
 
 Brazilian documents and numbers validator for PHP.
 
@@ -36,7 +36,7 @@ I suppose that the following example is all you need:
 
 require 'vendor/autoload.php'; // If you're using Composer (recommended)
 
-$brNum = new BrazilianNumbers();
+$brNum = new Springy\BrazilianNumbers();
 
 // The following numbers can also be used without a mask.
 $cpf = '899.678.736-12';

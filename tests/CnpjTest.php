@@ -6,7 +6,7 @@ class CnpjTest extends TestCase
 {
     public function testInvalidCnpj()
     {
-        $brNum = new BrazilianNumbers();
+        $brNum = new Springy\BrazilianNumbers();
 
         $this->assertFalse($brNum->isCnpjValid(''));
         $this->assertFalse($brNum->isCnpjValid('000'));
@@ -19,7 +19,7 @@ class CnpjTest extends TestCase
 
     public function testValidCnpj()
     {
-        $brNum = new BrazilianNumbers();
+        $brNum = new Springy\BrazilianNumbers();
 
         $this->assertTrue($brNum->isCnpjValid('76871442000175'));
         $this->assertTrue($brNum->isCnpjValid('76.871.442/0001-75'));
