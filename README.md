@@ -27,6 +27,48 @@ To get the latest stable version of this component use:
 
 in your composer.json file.
 
+## Usage
+
+I suppose that the following example is all you need:
+
+```php
+<?php
+
+require 'vendor/autoload.php'; // If you're using Composer (recommended)
+
+$brNum = new BrazilianNumbers();
+
+// The following numbers can also be used without a mask.
+$cpf = '899.678.736-12';
+$cnpj = '76.871.442/0001-75';
+$cnh = '21059294129';
+$nis = '640.58791.38-4';
+
+if ($brNum->isCpfValid($cpf)) {
+    echo "CPF valid!\n";
+} else {
+    echo "CPF invalid!\n";
+}
+
+if ($brNum->isCnpjValid($cnpj)) {
+    echo "CNPJ valid!\n";
+} else {
+    echo "CNPJ invalid!\n";
+}
+
+if ($brNum->isCnhValid($cnh)) {
+    echo "CNH valid!\n";
+} else {
+    echo "CNH invalid!\n";
+}
+
+if ($brNum->isNisValid($nis)) {
+    echo "NIS valid!\n";
+} else {
+    echo "NIS invalid!\n";
+}
+```
+
 ## License
 
 This project is licensed under [The MIT License (MIT)](/LICENSE).
