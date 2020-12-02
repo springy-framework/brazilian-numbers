@@ -6,7 +6,7 @@ Brazilian documents and numbers validator for PHP.
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/bf5ff92d1ecb484cbef2ec2c58f0b373)](https://www.codacy.com/gh/springy-framework/brazilian-numbers/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=springy-framework/brazilian-numbers&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.org/springy-framework/brazilian-numbers.svg?branch=main)](https://travis-ci.org/springy-framework/brazilian-numbers)
 ![PHP Composer](https://github.com/springy-framework/brazilian-numbers/workflows/PHP%20Composer/badge.svg)
-[![StyleCI](https://github.styleci.io/repos/317241593/shield)](https://github.styleci.io/repos/317241593)
+[![StyleCI](https://github.styleci.io/repos/317241593/shield?style=flat&branch=6.x)](https://github.styleci.io/repos/317241593)
 [![Total Downloads](https://poser.pugx.org/springy-framework/brazilian-numbers/downloads)](https://packagist.org/packages/springy-framework/brazilian-numbers)
 [![License](https://poser.pugx.org/springy-framework/brazilian-numbers/license)](https://packagist.org/packages/springy-framework/brazilian-numbers)
 
