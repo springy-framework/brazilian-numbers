@@ -14,7 +14,7 @@ Brazilian documents and numbers validator for PHP.
 
 ## Requirements
 
--   PHP 7.2+
+-   PHP 7.3+
 
 ## Instalation
 
