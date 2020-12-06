@@ -1,7 +1,21 @@
 <?php
 
+/**
+ * Brazlian Document Numbers Validator.
+ *
+ * @copyright 2020 Fernando Val
+ * @copyright 2020 Springy Framework Team
+ * @author    Fernando Val
+ * @license   https://github.com/springy-framework/brazilian-numbers/blob/main/LICENSE MIT
+ *
+ * @version   1.0.0
+ */
+
 namespace Springy;
 
+/**
+ * Springy\BrazilianNumbers class.
+ */
 class BrazilianNumbers
 {
     public function isCnhValid(string $cnh): bool
