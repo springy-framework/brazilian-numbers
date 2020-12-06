@@ -7,7 +7,7 @@ email, or any other method with the owners of this repository before making a ch
 
 ## Code of Conduct
 
-Please note we have a [code of conduct](/CODE_OF_CONDUCT), please follow it in all your interactions
+Please note we have a [code of conduct](/CODE_OF_CONDUCT.md), please follow it in all your interactions
 with the project.
 
 ## Submitting changes
@@ -36,7 +36,7 @@ We try to have most as possible code coverage tests and uses [PHPStan](https://p
 
 Before sending a pull request to this repository, ensure you have followed these steps:
 
--   Write test cases if you are developing new features, and update [README.md](/README) file with usage
+-   Write test cases if you are developing new features, and update [README.md](/README.md) file with usage
     samples.
 
 -   Ensure your changes don't break any test case.
