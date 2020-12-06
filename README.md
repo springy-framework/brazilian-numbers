@@ -1,16 +1,15 @@
 # Springy BrazilianNumbers
 
-Brazilian documents and numbers validator for PHP.
+Brazilian documents numbers validator for PHP.
 
 [![Latest Stable Version](https://poser.pugx.org/springy-framework/brazilian-numbers/v/stable)](https://packagist.org/packages/springy-framework/brazilian-numbers)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/bf5ff92d1ecb484cbef2ec2c58f0b373)](https://www.codacy.com/gh/springy-framework/brazilian-numbers/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=springy-framework/brazilian-numbers&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.org/springy-framework/brazilian-numbers.svg?branch=main)](https://travis-ci.org/springy-framework/brazilian-numbers)
 ![PHP Composer](https://github.com/springy-framework/brazilian-numbers/workflows/PHP%20Composer/badge.svg)
+[![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/bf5ff92d1ecb484cbef2ec2c58f0b373)](https://www.codacy.com/gh/springy-framework/brazilian-numbers/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=springy-framework/brazilian-numbers&amp;utm_campaign=Badge_Grade)
 [![StyleCI](https://github.styleci.io/repos/317241593/shield?style=flat)](https://github.styleci.io/repos/317241593)
 [![Total Downloads](https://poser.pugx.org/springy-framework/brazilian-numbers/downloads)](https://packagist.org/packages/springy-framework/brazilian-numbers)
 [![License](https://poser.pugx.org/springy-framework/brazilian-numbers/license)](https://packagist.org/packages/springy-framework/brazilian-numbers)
-
-> **WARNING!** This project is still a work in progress.
 
 ## Requirements
 
@@ -69,6 +68,10 @@ if ($brNum->isNisValid($nis)) {
     echo "NIS invalid!\n";
 }
 ```
+
+## Code of Conduct
+
+In order to ensure that our community is welcoming to all, please review and abide by the [code of conduct](/CODE_OF_CONDUCT).
 
 ## License
 
