@@ -10,13 +10,6 @@ email, or any other method with the owners of this repository before making a ch
 Please note we have a [code of conduct](/CODE_OF_CONDUCT.md), please follow it in all your interactions
 with the project.
 
-## Submitting changes
-
-Please send a GitHub Pull Request to this repository with a clear list of what you've done (read more
-about [pull requests](http://help.github.com/pull-requests/)). When you send a pull request, we will
-love you forever if you include examples. We can always use more test coverage. Please follow our
-coding conventions (below) and make sure all of your commits are atomic (one feature per commit).
-
 ## Coding conventions
 
 This project follows [PHP-FIG](https://www.php-fig.org)
