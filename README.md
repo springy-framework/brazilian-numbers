@@ -1,6 +1,8 @@
-# Springy BrazilianNumbers
+# PHP Brazilian Numbers Validation
 
-Brazilian documents numbers validator for PHP.
+This package can validate documents like CPF, CNPJ, CNH and NIS.
+
+It can take the strings with the numbers of documents of people and companies from Brazil and perform format and check digit verifications to determine if they can be valid.
 
 [![Latest Stable Version](https://poser.pugx.org/springy-framework/brazilian-numbers/v/stable)](https://packagist.org/packages/springy-framework/brazilian-numbers)
 [![Build Status](https://travis-ci.org/springy-framework/brazilian-numbers.svg?branch=main)](https://travis-ci.org/springy-framework/brazilian-numbers)
