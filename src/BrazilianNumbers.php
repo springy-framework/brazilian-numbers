@@ -72,35 +72,30 @@ class BrazilianNumbers
 
     public function isCpfValid(string $cpf): bool
     {
-        if (!preg_match('/\d{11}|(\d{3}\.){2}\d{3}-\d{2}/', $cpf)) {
+        $sanitized = preg_replace(self::PE_NOT_DIGIT, '', $cpf);
+
+        if (
+            !preg_match('/\d{11}|(\d{3}\.){2}\d{3}-\d{2}/', $cpf)
+            || preg_match("/^{$sanitized[0]}{11}$/", $sanitized)
+        ) {
             return false;
         }
 
-        $cpf = preg_replace('/[^\d]/', '', $cpf);
-
-        if (preg_match("/^{$cpf[0]}{11}$/", $cpf)) {
-            return false;
-        }
-
-        $dig = 0;
+        // Computes first digit
+        $sum = 0;
         for ($i = 0; $i < 9; $i++) {
-            $dig += (int) $cpf[$i] * (10 - $i);
+            $sum += (int) $sanitized[$i] * (10 - $i);
         }
+        $dg1 = (($sum %= 11) < 2) ? 0 : 11 - $sum;
 
-        if ((int) $cpf[9] != ((($dig %= 11) < 2) ? 0 : 11 - $dig)) {
-            return false;
-        }
-
-        $dig = 0;
+        // Computes second digit
+        $sum = 0;
         for ($i = 0; $i < 10; $i++) {
-            $dig += (int) $cpf[$i] * (11 - $i);
+            $sum += (int) $sanitized[$i] * (11 - $i);
         }
+        $dg2 = (($sum %= 11) < 2) ? 0 : 11 - $sum;
 
-        if ((int) $cpf[10] != ((($dig %= 11) < 2) ? 0 : 11 - $dig)) {
-            return false;
-        }
-
-        return true;
+        return ((int) $sanitized[9] == $dg1) && ((int) $sanitized[10] == $dg2);
     }
 
     public function isNisValid(string $nis): bool
