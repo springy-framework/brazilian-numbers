@@ -24,27 +24,21 @@ class BrazilianNumbers
             return false;
         }
 
-        $dig = 0;
+        // Computes first digit
+        $sum = 0;
         for ($i = 0; $i < 9; $i++) {
-            $dig += (int) $cnh[$i] * ($i + 2);
+            $sum += (int) $cnh[$i] * ($i + 2);
         }
+        $dg1 = (($sum %= 11) < 2) ? 0 : 11 - $sum;
 
-        $dg1 = (($dig %= 11) < 2) ? 0 : 11 - $dig;
-
-        if ((int) $cnh[9] != $dg1) {
-            return false;
-        }
-
-        $dig = 0;
+        // Computes second digit
+        $sum = 0;
         for ($i = 0; $i < 9; $i++) {
-            $dig += (int) ($dg1 . $cnh)[$i] * ($i + 2);
+            $sum += (int) ($dg1 . $cnh)[$i] * ($i + 2);
         }
+        $dg2 = (($sum %= 11) < 2) ? 0 : 11 - $sum;
 
-        if ((int) $cnh[10] != ((($dig %= 11) < 2) ? 0 : 11 - $dig)) {
-            return false;
-        }
-
-        return true;
+        return ((int) $cnh[9] == $dg1) && ((int) $cnh[10] == $dg2);
     }
 
     public function isCnpjValid(string $cnpj): bool
