@@ -8,7 +8,7 @@
  * @author    Fernando Val
  * @license   https://github.com/springy-framework/brazilian-numbers/blob/main/LICENSE MIT
  *
- * @version   1.0.0
+ * @version   1.0.1
  */
 
 namespace Springy;
