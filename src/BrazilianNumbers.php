@@ -75,7 +75,7 @@ class BrazilianNumbers
         $sanitized = preg_replace(self::PE_NOT_DIGIT, '', $cpf);
 
         if (
-            !preg_match('/\d{11}|(\d{3}\.){2}\d{3}-\d{2}/', $cpf)
+            !preg_match('/^(\d{11}|(\d{3}\.){2}\d{3}-\d{2})$/', $cpf)
             || preg_match("/^{$sanitized[0]}{11}$/", $sanitized)
         ) {
             return false;
@@ -100,21 +100,20 @@ class BrazilianNumbers
 
     public function isNisValid(string $nis): bool
     {
-        if (!preg_match('/\d{11}|\d{3}\.\d{5}\.\d{2}-\d/', $nis)) {
+        $sanitized = preg_replace(self::PE_NOT_DIGIT, '', $nis);
+
+        if (
+            !preg_match('/^(\d{11}|\d{3}\.\d{5}\.\d{2}-\d)$/', $nis)
+            || preg_match("/^{$sanitized[0]}{11}$/", $sanitized)
+        ) {
             return false;
         }
 
-        $nis = preg_replace('/[^\d]/', '', $nis);
-
-        if (preg_match("/^{$nis[0]}{11}$/", $nis)) {
-            return false;
-        }
-
-        $dig = 0;
+        $sum = 0;
         for ($i = 0; $i < 10; $i++) {
-            $dig += (int) $nis[$i] * (($i < 2 ? 3 : 11) - $i);
+            $sum += (int) $sanitized[$i] * (($i < 2 ? 3 : 11) - $i);
         }
 
-        return (int) $nis[10] == (((10 * $dig) % 11) % 10);
+        return (int) $sanitized[10] == (((10 * $sum) % 11) % 10);
     }
 }
