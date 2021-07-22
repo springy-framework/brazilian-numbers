@@ -18,9 +18,11 @@ namespace Springy;
  */
 class BrazilianNumbers
 {
+    protected const PE_NOT_DIGIT = '/[^\d]/';
+
     public function isCnhValid(string $cnh): bool
     {
-        if (!preg_match('/\d{11}/', $cnh) || preg_match("/^{$cnh[0]}{11}$/", $cnh)) {
+        if (!preg_match('/^\d{11}$/', $cnh) || preg_match("/^{$cnh[0]}{11}$/", $cnh)) {
             return false;
         }
 
@@ -43,35 +45,29 @@ class BrazilianNumbers
 
     public function isCnpjValid(string $cnpj): bool
     {
-        if (!preg_match('/\d{14}|\d{2}(\.\d{3}){2}\/\d{4}-\d{2}/', $cnpj)) {
+        $sanitized = preg_replace(self::PE_NOT_DIGIT, '', $cnpj);
+        if (
+            !preg_match('/^(\d{14}|\d{2}(\.\d{3}){2}\/\d{4}-\d{2})$/', $cnpj)
+            || preg_match("/^{$sanitized[0]}{14}$/", $sanitized)
+        ) {
             return false;
         }
 
-        $cnpj = preg_replace('/[^\d]/', '', $cnpj);
-
-        if (preg_match("/^{$cnpj[0]}{14}$/", $cnpj)) {
-            return false;
-        }
-
-        $dig = 0;
+        // Computes first digit
+        $sum = 0;
         for ($i = 0; $i < 12; $i++) {
-            $dig += (int) $cnpj[$i] * (($i < 4 ? 5 : 13) - $i);
+            $sum += (int) $sanitized[$i] * (($i < 4 ? 5 : 13) - $i);
         }
+        $dg1 = (($sum %= 11) < 2) ? 0 : 11 - $sum;
 
-        if ((int) $cnpj[12] != ((($dig %= 11) < 2) ? 0 : 11 - $dig)) {
-            return false;
-        }
-
-        $dig = 0;
+        // Computes second digit
+        $sum = 0;
         for ($i = 0; $i < 13; $i++) {
-            $dig += (int) $cnpj[$i] * (($i < 5 ? 6 : 14) - $i);
+            $sum += (int) $sanitized[$i] * (($i < 5 ? 6 : 14) - $i);
         }
+        $dg2 = (($sum %= 11) < 2) ? 0 : 11 - $sum;
 
-        if ((int) $cnpj[13] != ((($dig %= 11) < 2) ? 0 : 11 - $dig)) {
-            return false;
-        }
-
-        return true;
+        return ((int) $sanitized[12] == $dg1) && ((int) $sanitized[13] == $dg2);
     }
 
     public function isCpfValid(string $cpf): bool
