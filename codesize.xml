@@ -10,15 +10,13 @@
         Springy PHPMD ruleset
     </description>
 
-    <rule ref="rulesets/cleancode.xml" />
-
-    <rule ref="rulesets/codesize.xml">
-        <exclude name="CyclomaticComplexity" />
-        <exclude name="NPathComplexity" />
-        <exclude name="TooManyPublicMethods" />
-        <exclude name="TooManyFields" />
+    <rule ref="rulesets/cleancode.xml">
+        <exclude name="StaticAccess" />
     </rule>
-    <rule ref="rulesets/codesize.xml/CyclomaticComplexity">
+
+    <rule ref="rulesets/codesize.xml" />
+
+    <!-- <rule ref="rulesets/codesize.xml/CyclomaticComplexity">
         <properties>
             <property name="reportLevel" description="The Cyclomatic Complexity reporting threshold" value="15"/>
             <property name="showClassesComplexity" description="Indicate if class average violation should be added to the report" value="true"/>
@@ -29,12 +27,12 @@
         <properties>
             <property name="minimum" description="The npath reporting threshold" value="600"/>
         </properties>
-    </rule>
-    <rule ref="rulesets/codesize.xml/TooManyFields">
+    </rule> -->
+    <!-- <rule ref="rulesets/codesize.xml/TooManyFields">
         <properties>
             <property name="maxfields" description="The field count reporting threshold" value="20"/>
         </properties>
-    </rule>
+    </rule> -->
 
     <rule ref="rulesets/controversial.xml" />
 

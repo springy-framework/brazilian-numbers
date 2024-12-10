@@ -8,15 +8,12 @@ they can be valid.
 
 [![Latest Stable Version](https://poser.pugx.org/springy-framework/brazilian-numbers/v/stable)](https://packagist.org/packages/springy-framework/brazilian-numbers)
 [![Tests](https://github.com/springy-framework/brazilian-numbers/actions/workflows/php.yml/badge.svg)](https://github.com/springy-framework/brazilian-numbers/actions/workflows/php.yml)
-[![Build Status](https://travis-ci.com/springy-framework/brazilian-numbers.svg?branch=main)](https://travis-ci.com/springy-framework/brazilian-numbers)
-[![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
-[![StyleCI](https://github.styleci.io/repos/317241593/shield?style=flat)](https://github.styleci.io/repos/317241593)
 [![Total Downloads](https://poser.pugx.org/springy-framework/brazilian-numbers/downloads)](https://packagist.org/packages/springy-framework/brazilian-numbers)
 [![License](https://poser.pugx.org/springy-framework/brazilian-numbers/license)](https://packagist.org/packages/springy-framework/brazilian-numbers)
 
 ## Requirements
 
-- PHP 7.3+
+- PHP 8.1+
 
 ## Instalation
 
@@ -39,37 +36,42 @@ I suppose that the following example is all you need:
 
 require 'vendor/autoload.php'; // If you're using Composer (recommended)
 
-$brNum = new Springy\BrazilianNumbers();
-
 // The following numbers can also be used without a mask.
 $cpf = '899.678.736-12';
 $cnpj = '76.871.442/0001-75';
 $cnh = '21059294129';
 $nis = '640.58791.38-4';
 
-if ($brNum->isCpfValid($cpf)) {
+if (Springy\Utils\BrazilianNumbers\Cpf::isValid($cpf)) {
     echo "CPF valid!\n";
 } else {
     echo "CPF invalid!\n";
 }
 
-if ($brNum->isCnpjValid($cnpj)) {
+if (Springy\Utils\BrazilianNumbers\Cnpj::isValid($cnpj)) {
     echo "CNPJ valid!\n";
 } else {
     echo "CNPJ invalid!\n";
 }
 
-if ($brNum->isCnhValid($cnh)) {
+if (Springy\Utils\BrazilianNumbers\Cnh::isValid($cnh)) {
     echo "CNH valid!\n";
 } else {
     echo "CNH invalid!\n";
 }
 
-if ($brNum->isNisValid($nis)) {
+if (Springy\Utils\BrazilianNumbers\Nis::isValid($nis)) {
     echo "NIS valid!\n";
 } else {
     echo "NIS invalid!\n";
 }
+
+echo Springy\Utils\BrazilianNumbers\Cpf::mask('89967873612');
+echo Springy\Utils\BrazilianNumbers\Cnpj::mask('76871442000175');
+echo Springy\Utils\BrazilianNumbers\Nis::mask('64058791384');
+echo Springy\Utils\BrazilianNumbers\Cpf::unmask($cpf);
+echo Springy\Utils\BrazilianNumbers\Cnpj::unmask($cnpj);
+echo Springy\Utils\BrazilianNumbers\Nis::unmask($nis);
 ```
 
 ## Contributing
