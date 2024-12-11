@@ -3,7 +3,18 @@
     "description": "PHP class for validate and check brazilian document and numbers",
     "license": "MIT",
     "type": "library",
-    "keywords": [""],
+    "keywords": [
+        "CNH",
+        "CPF",
+        "CNPJ",
+        "NIS",
+        "inscricao estadual",
+        "inscrição",
+        "estadual",
+        "document",
+        "number",
+        "validator"
+    ],
     "authors": [
         {
             "name": "Fernando Val",
