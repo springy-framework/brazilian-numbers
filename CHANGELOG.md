@@ -7,3 +7,5 @@
 -   Added class Springy\Utils\BrazilianNumbers\Cnpj;
 -   Added class Springy\Utils\BrazilianNumbers\Cnpj;
 -   Added class Springy\Utils\BrazilianNumbers\Nis;
+-   Added class Springy\Utils\BrazilianNumbers\InscricaoEstadual;
+-   Added methods to mask and unmask numbers;
