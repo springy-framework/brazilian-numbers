@@ -1,6 +1,7 @@
 # PHP Brazilian Numbers Validation
 
-This package can validate documents like CPF, CNPJ, CNH and NIS.
+This package can validate documents like CPF, CNPJ, CNH, NIS and "inscrição
+estadual".
 
 It can take the strings with the numbers of documents of people and companies
 from Brazil and perform format and check digit verifications to determine if
@@ -41,6 +42,7 @@ $cpf = '899.678.736-12';
 $cnpj = '76.871.442/0001-75';
 $cnh = '21059294129';
 $nis = '640.58791.38-4';
+$ierj = '18.251.03-5';
 
 if (Springy\Utils\BrazilianNumbers\Cpf::isValid($cpf)) {
     echo "CPF valid!\n";
@@ -66,12 +68,20 @@ if (Springy\Utils\BrazilianNumbers\Nis::isValid($nis)) {
     echo "NIS invalid!\n";
 }
 
+if (Springy\Utils\BrazilianNumbers\InscricaoEstadual::isValid($ierj)) {
+    echo "IE valid!\n";
+} else {
+    echo "IE invalid!\n";
+}
+
 echo Springy\Utils\BrazilianNumbers\Cpf::mask('89967873612');
 echo Springy\Utils\BrazilianNumbers\Cnpj::mask('76871442000175');
 echo Springy\Utils\BrazilianNumbers\Nis::mask('64058791384');
+echo Springy\Utils\BrazilianNumbers\InscricaoEstadual::mask('18251035');
 echo Springy\Utils\BrazilianNumbers\Cpf::unmask($cpf);
 echo Springy\Utils\BrazilianNumbers\Cnpj::unmask($cnpj);
 echo Springy\Utils\BrazilianNumbers\Nis::unmask($nis);
+echo Springy\Utils\BrazilianNumbers\InscricaoEstadual::unmask($ierj);
 ```
 
 ## Contributing
